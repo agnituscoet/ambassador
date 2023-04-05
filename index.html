@@ -21,5 +21,35 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-</script></head>
-<body></body>
+</script><script type="module" src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
+</head>
+<body>
+    <button id="google-signin-button">Sign in with Google</button>
+
+
+<script>const auth = firebase.auth();
+
+const googleSigninButton = document.querySelector('#google-signin-button');
+googleSigninButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  auth.signInWithPopup(provider)
+    .then((result) => {
+      // Google Sign-In successful
+      const user = result.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      // An error occurred
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+});
+</script>
+
+
+
+</body>
