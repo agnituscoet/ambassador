@@ -4,47 +4,40 @@
     <title>Signup Form</title>
 </head>
 <body>
-    <h1>Signup Form</h1>
-    <form id="signupForm" action="" method="post">
+    <!-- Signup form HTML code -->
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <!-- Form fields go here -->
+        <!-- For example: -->
         <input type="text" name="first_name" placeholder="First Name">
         <input type="text" name="last_name" placeholder="Last Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="tel" name="phone" placeholder="Phone Number">
-        <input type="text" name="whatsapp" placeholder="WhatsApp Number">
-        <input type="text" name="college" placeholder="College">
-        <input type="text" name="year_of_study" placeholder="Year of Study">
-        <textarea name="feedback" placeholder="Feedback or Queries"></textarea>
+        <!-- Other form fields go here -->
         <input type="submit" name="submit" value="Submit">
     </form>
-    
+
     <?php
-        // PHP code for processing form submission goes here
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $first_name = $_POST["first_name"];
-            $last_name = $_POST["last_name"];
-            $email = $_POST["email"];
-            $phone = $_POST["phone"];
-            $whatsapp = $_POST["whatsapp"];
-            $college = $_POST["college"];
-            $year_of_study = $_POST["year_of_study"];
-            $feedback = $_POST["feedback"];
-            
-            // Send email with form data
-            $to = "agnituscoet@gmail.com";
-            $subject = "Signup Form Submission";
-            $message = "First Name: " . $first_name . "\n";
-            $message .= "Last Name: " . $last_name . "\n";
-            $message .= "Email: " . $email . "\n";
-            $message .= "Phone Number: " . $phone . "\n";
-            $message .= "WhatsApp Number: " . $whatsapp . "\n";
-            $message .= "College: " . $college . "\n";
-            $message .= "Year of Study: " . $year_of_study . "\n";
-            $message .= "Feedback or Queries: " . $feedback . "\n";
-            mail($to, $subject, $message);
-            
-            echo "<p>Thank you for submitting the form!</p>";
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Get form data
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        // Other form fields go here
+    
+        // Process form data and send to email
+        $to = 'agnituscoet@gmail.com'; // Change this to the recipient email address
+        $subject = 'Signup Form Submission';
+        $message = 'First Name: ' . $first_name . "\r\n" .
+                   'Last Name: ' . $last_name . "\r\n";
+        // Append other form fields to the message as needed
+        $headers = 'From: noreply@yourdomain.com' . "\r\n" .
+                   'Reply-To: noreply@yourdomain.com' . "\r\n" .
+                   'X-Mailer: PHP/' . phpversion();
+    
+        if (mail($to, $subject, $message, $headers)) {
+            echo "<p>Form data submitted successfully. Thank you for signing up!</p>";
+        } else {
+            echo "<p>Failed to send form data. Please try again later.</p>";
         }
+    }
     ?>
+    
 </body>
 </html>
