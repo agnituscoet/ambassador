@@ -1,9 +1,124 @@
 #last{
-width: 100%;
-height: auto;
-justify-content: center;
-background-color: #ffb3b3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img {
+	width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    margin-bottom: 8px;
+}
+.logo h1 {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 24px;
+    align-items: center;
+    color: #070707;
+}
+
+.illustration{
+	width: 273px;
+    height: 302.95px;
+     flex: none;
+     order: 1;
+     flex-grow: 0;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.heading{
+    margin-left: 15px;
+}
+
+.heading h1{
+    width: 74px;
+    height: 27px;
+    
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    
+    color: #070707;
+
+}
+
+.heading p{
+width:500px;
+height: 15px;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 15px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+
+color: #070707;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    border-radius: 200px 0px 0px 0px;
+    bottom: 0;
+    right: 0;
+  }
+
+.form-control{
+    background: #FFFFFF;
+    border: 2px solid #070707;
+    border-radius: 4px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+
+
+
+
+
+
+
+
+
 .full{
 width: 80%;
 display: inline-block;
@@ -58,9 +173,7 @@ display: inline-block;
 .list-item a:hover{
 text-decoration: underline;
 }
-.form-control{
-background-color: black;
-}
+
 	
 @media screen and (min-width: 770px){
 .full{

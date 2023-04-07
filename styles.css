@@ -10,7 +10,6 @@ nav {
 	justify-content: space-between;
 	padding: 20px;
 	background-color: #fff;
-
 }
 header{
     display: flex;
@@ -97,7 +96,7 @@ nav .nav-links ul li.join a {
     margin-top: 50px;
 }
 .btn{
-width: 180px;
+width: 150px;
 height: 60px;
 background: #070707;
 border-radius: 10px;
@@ -137,21 +136,43 @@ color: #000000;
    flex-direction: column;
     align-items: center;
   }
-  .bg-blur{
-    height: 50px;
-    width: 400px;
-    text-align: center;
-    background: #373333;
-    filter: blur(40.17px);
-  }
+  
+
+  
     .heading1 ,.heading2{
         position: absolute;
-        font-size: 48px;
+        font-size: 36px;
         font-weight: 400;
         line-height: 48px;
         letter-spacing: 0.09em;
-        color: #ffffff;
-        margin-bottom: 60px;
+        color: #000000;
+        margin-bottom: 80px;
+       
+    }
+    /* unorthodox underlining the heading heading1 and heading2 */
+    .heading1::after{
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #070707;
+        transition: all 0.3s ease;
+    }
+    .heading1:hover::after {
+        width: 100%;
+        margin-left: 0;
+    }
+    .heading2::after{
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #070707;
+        transition: all 0.3s ease;
+    }
+    .heading2:hover::after {
+        width: 100%;
+        margin-left: 0;
     }
 
     .subheadings{
@@ -261,6 +282,7 @@ border-color: rgba(0, 0, 0, 0.5);
         line-height: 24px;
         letter-spacing: 0.09em;
         color: #000000;
+        text-align: center;
      }
 
      .circle-bg{
@@ -289,9 +311,10 @@ border-color: rgba(0, 0, 0, 0.5);
      .phone{
         width: 250px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
      .circle-bg i{
         font-size: 20px;
@@ -304,21 +327,7 @@ border-color: rgba(0, 0, 0, 0.5);
 
 
 
-     footer .wave1 ,.wave2,.wave3{
-        height: 170px;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-     }
-     .wave2{
-        height:90px;
-        width:100%;
-     }
-     .wave3{
-        height: 120px;
-        width: 100%;
-     }
+  
 
      .hamburger {
         margin-right: 20px;
@@ -349,6 +358,7 @@ border-color: rgba(0, 0, 0, 0.5);
     .header-right{
         display: none;
     }
+    
 
 
         @media only screen and (max-width: 600px) {
@@ -389,12 +399,13 @@ border-color: rgba(0, 0, 0, 0.5);
             }
 
             .home{
-                height:95vh;
+                height:100vh;
                 position: relative;
 
             }
 
             .content {
+               
               flex-direction: column;
               align-items: center;
               margin-top: 20px;
@@ -480,13 +491,7 @@ border-color: rgba(0, 0, 0, 0.5);
                 margin-bottom: 20px;
             }
 
-            .bg-blur{
-                height: 50px;
-                width: 350px;
-                text-align: center;
-                background: #373333;
-                filter: blur(40.17px);
-              }
+            
               .heading1{
                 font-size: 36px;
               }
@@ -554,7 +559,7 @@ border-color: rgba(0, 0, 0, 0.5);
 
             footer{
                 position: relative;
-                height: 500px;
+                height: 700px;
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -575,26 +580,5 @@ border-color: rgba(0, 0, 0, 0.5);
              footer .logo{
                 margin-top: 30px;
              }
-
-             footer .wave1 ,.wave2,.wave3{
-                height: 100px;
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-             }
-             .wave2{
-                height:50px;
-                width:100%;
-             }
-             .wave3{
-                height: 70px;
-                width: 100%;
-             }
-             .phone p{
-                font-size:12px;
-             }
-
-
 
         }
