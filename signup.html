@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup Page</title>
-    <!-- Include CSS styles here -->
+    <title>Signup Form</title>
 </head>
 <body>
-    <h1>Signup</h1>
-    <form id="signupForm" action="send-email.php" method="post">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required><br>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-        <label for="contactPhone">Contact Phone:</label>
-        <input type="tel" id="contactPhone" name="contactPhone" required><br>
-        <label for="whatsapp">WhatsApp Number:</label>
-        <input type="tel" id="whatsapp" name="whatsapp" required><br>
-        <label for="college">College:</label>
-        <input type="text" id="college" name="college" required><br>
-        <label for="yearOfStudy">Year of Study:</label>
-        <input type="number" id="yearOfStudy" name="yearOfStudy" required><br>
-        <label for="feedback">Feedback or Queries:</label>
-        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
+    <h1>Signup Form</h1>
+    <form id="signupForm" action="" method="post">
+        <!-- Form fields go here -->
+        <input type="text" name="first_name" placeholder="First Name">
+        <input type="text" name="last_name" placeholder="Last Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="whatsapp" placeholder="WhatsApp Number">
+        <input type="text" name="college" placeholder="College">
+        <input type="text" name="year_of_study" placeholder="Year of Study">
+        <textarea name="feedback" placeholder="Feedback or Queries"></textarea>
+        <input type="submit" name="submit" value="Submit">
     </form>
+    
+    <?php
+        // PHP code for processing form submission goes here
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $first_name = $_POST["first_name"];
+            $last_name = $_POST["last_name"];
+            $email = $_POST["email"];
+            $phone = $_POST["phone"];
+            $whatsapp = $_POST["whatsapp"];
+            $college = $_POST["college"];
+            $year_of_study = $_POST["year_of_study"];
+            $feedback = $_POST["feedback"];
+            
+            // Send email with form data
+            $to = "agnituscoet@gmail.com";
+            $subject = "Signup Form Submission";
+            $message = "First Name: " . $first_name . "\n";
+            $message .= "Last Name: " . $last_name . "\n";
+            $message .= "Email: " . $email . "\n";
+            $message .= "Phone Number: " . $phone . "\n";
+            $message .= "WhatsApp Number: " . $whatsapp . "\n";
+            $message .= "College: " . $college . "\n";
+            $message .= "Year of Study: " . $year_of_study . "\n";
+            $message .= "Feedback or Queries: " . $feedback . "\n";
+            mail($to, $subject, $message);
+            
+            echo "<p>Thank you for submitting the form!</p>";
+        }
+    ?>
 </body>
 </html>
