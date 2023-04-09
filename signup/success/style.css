@@ -1,0 +1,187 @@
+#last{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+header{
+  height:10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo img{
+    width: 10px;
+    height: auto;
+    margin-left: 5px;
+    margin-bottom: -17px;
+    
+}
+
+.logo h1 {
+    font-family: 'Vollkorn';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 24px;
+    align-items: center;
+    color: #070707;
+}
+
+.illustration{
+	width: 273px;
+    height: 302.95px;
+     flex: none;
+     order: 1;
+     flex-grow: 0;
+     margin-left: 500px;
+     
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+.content h1{ 
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    
+    color: #070707;
+    margin-bottom: 50px;
+
+}
+
+
+.circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    border-radius: 200px 0px 0px 0px;
+    bottom: 0;
+    right: 0;
+  }
+
+.form-control{
+    background: #FFFFFF;
+    border: 2px solid #070707;
+    border-radius: 4px;
+    width:400px;
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+.btn{
+    margin-top:20px;
+    margin-left:20px;
+    height:30px;
+    width: 100px;
+    font-size: 16px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+p{
+    margin-top:20px;
+    font-size: 14px;
+    margin-left:15px;
+}
+
+@media (max-width: 1000px) {
+    #last{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .circle{
+        height: 200px;
+        width: 200px;
+    }
+    .illustration{
+        display: none;
+    }
+    .form-control{
+        background: #FFFFFF;
+        border: 2px solid #070707;
+        border-radius: 4px;
+        width: 500px;
+        height: 100px;
+        font-size: 30px;
+    }
+
+    .logo img {
+        width: 530px;
+        height: 300px;
+   
+    }
+    
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    .content h1{ 
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 27px;
+        letter-spacing: 0.2em;
+        
+        color: #070707;
+        margin-bottom: 50px;
+    
+    }
+    .btn{
+        margin-top:20px;
+        margin-left:20px;
+        height:80px;
+        width: 200px;
+        font-size: 30px;   
+        letter-spacing: .1em; 
+    }
+    p{
+        margin-top:20px;
+        font-size: 30px;
+        margin-left:15px;
+    }
+  }
+  .signupcontact{
+    text-decoration: none;
+    color:rgb(119, 38, 38);
+    opacity:.7;
+}
+.signupcontact:hover{
+    text-decoration: none;
+    color:rgb(119, 38, 38);
+    opacity:1;
+}
+
+
+.signupcontact2{
+    text-decoration: none;
+    color:rgb(0, 99, 61);
+    opacity:.7;
+}
+.signupcontact2:hover{
+    text-decoration: none;
+    color:rgb(0, 99, 61);
+    opacity:1;
+}
+.new{
+    width:100px;
+    height:auto;
+}
