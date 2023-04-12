@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Campus Ambassador Program - Agnitus</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Mountain View</title>
+    <!-- ============ CSS Stylesheet ============ -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <script src="https://kit.fontawesome.com/8e135dc85f.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="images/favicon.ico"/>
-   
-
 </head>
 <body>
-    
-    <section class="home" id="home">
-        <header>
+    <header>
         <div class="logo">
-			<img src="/images/agnitus.png" alt="Agnitus logo">
+			<img src="images/agnitus.png" alt="Agnitus logo" style="width: 100; height: 100;">
             
 		</div>
 	<nav>
@@ -27,7 +27,8 @@
 				<li><a href="#home">Home</a></li>
 				<li><a href="#prize">Prize</a></li>
 				<li><a href="#footer">Contact</a></li>
-                <button class="btn" onclick="window.location.href='signup/index.html';">Join</button>
+                <a href="signup/index.html" id="button1" style="  transform: translateY(0px);">Sign-Up</a>
+				
 			</ul>
 		</div>
 	</nav>
@@ -42,174 +43,286 @@
         </style>
     </div>
     </header>
-	<div class="content">
-		<div class="heading">
-			<h1>CAMPUS <br> AMBASSADOR <br> PROGRAM</h1>
-          
-            <button class="btn" onclick="window.location.href='signup/index.html';">Sign Up</button>
-		</div>
-			<img src="images/illustration.png" class="illustration" alt="Campus Ambassador Illustration">
 
-	</div>
-    <div class="circle"></div>
-</section>
-
-<section class="learn">      
-        <div class="bg-blur"></div>
-        <h1 class="heading1">BENEFITS</h1>
-
-        <div class="subheadings">
-
-                <div class="benifit">
-                    <img src="images/share.png" alt="Learn">
-                    <h2>Support</h2>
-                    <p>Provide guidance, encouragement, and assistance to others as an ambassador, and work collaboratively to achieve greater impact and success.</p>
-                </div>
-
-                <div class="benifit">
-                    <img src="images/learn.png" alt="Learn">
-                    <h2>Grow</h2>
-                    <p>Expand your impact and develop your personal and professional skills as an ambassador through networking and learning opportunities.</p>
-                </div>
-
-                <div class="benifit">
-                    <img src="images/earn.png" alt="Learn">
-                    <h2>Earn</h2>
-                    <p>Monetize your passion and expertise as an ambassador by leveraging your platform and pursuing various income-generating opportunities.</p>
-                </div>
-
-        </div>
-</section>
-
-
-
-
-<section class="prize" >
-
-
-    
-    <h1 class="heading1">Reward</h1>
-<div class="slider">
-    <div class="slider-img">
-    <ul id="ul-parent">
-      <li>
-        <div class="card ">
-          <h1>1st Prize</h1>
-          <h2>₹6000</h2>
-          <button>Register</button>
-          
-          <hr>
-          <p><i class="fa-solid fa-check"></i>  Certification<p>
-          <p><i class="fa-solid fa-check"></i>  Additional Benifits<p>
-        </div>
-            
-          </li>
-      <li>
-                    <div class="card">
-          <h1>2nd Prize</h1>
-          <h2>₹3000</h2>
-          <button>Register</button>
-          
-          <hr>
-          <p><i class="fa-solid fa-check"></i>  Certification<p>
-          <p><i class="fa-solid fa-check"></i>  Additional Benifits<p>
-        </div>
+    <section id="para">
+        <img src="images/stars.png" alt="stars" id="stars">
+        <img src="images/comet.png" alt="comet" id="comet">
+        <img src="images/purple-planet.png" alt="purple-planet" id="purple-planet">
+        <img src="images/mars.png" alt="mars" id="mars">
+        <img src="images/sattern.png" alt="planet" id="planet">
+        <img src="images/moon.png" alt="moon" id="moon">
         
-        
-      </li>
-      <li>
-        
-                    <div class="card">
-          <h1>3rd Prize</h1>
-          <h2>₹1000</h2>
-          <button>Register</button>
-          
-          <hr>
-          <p><i class="fa-solid fa-check"></i>  Certification<p>
-          <p><i class="fa-solid fa-check"></i>  Additional Benifits<p>
-        </div>
-        
-        
-        
-      </li>
-      <li>
-        
-                    <div class="card">
-          <h1 style="width:100%;">Consolation Prize </h1>
-          <h2>₹500</h2>
-          <button>Register</button>
-          
-          <hr>
-          <p><i class="fa-solid fa-check"></i> Certification<p>
-          <p><i class="fa-solid fa-check"></i> 4TH TO 13TH POSITION<p>
-        </div>
-        
-        
-        
-      </li>
+        <p id="heading-tag" class="content">AGNITUS 2023 COET</p>
+        <h2 id="text" class="content">Campus Ambassador<br>Program </h2>
+        <p id="heading-desc" class="content">Join our tech fest as a campus ambassador <br> and be a part of the excitement  in spreading the power of technology <br> and learning with Agnitus</p>
+        <a href="signup/index.html"  id="button">SignUp</a>
       
-      
-    </ul>
+        <img src="images/robot-earth.png" alt="earth-robbot" id="earth-robbot">
+
+    </section>
+
+
+  
+
+ <section id="Gain" style="margin-top:300px;" >
+  <h1>
+   Gain with Agnitus
+  </h1>
+  <div class="wrapper">
+    <div class="benefit Flourish">
+      <div class="benefit__image benefit__image--Flourish">
+        <img src="assets/images/Flourish.png" alt="Flourish" />
+      </div>
+      <div class="benefit__unit-name">Flourish</div>
+      <div class="benefit__unit-description">
+        As an ambassador of Agnitus, you may have the opportunity to flourish in terms of your professional and personal growth, through networking and learning.
+      </div>
+
+      <div class="benefit__unit-stats benefit__unit-stats--Flourish clearfix">
+        <div class="one-third">
+          <div class="stat">50 <i class="fa-regular fa-circle-up"></i></div>
+          <div class="stat-value">Creativity</div>
+        </div>
+
+        <div class="one-third">
+          <div class="stat">80 <i class="fa-regular fa-circle-up"></i></div>
+          <div class="stat-value">Skill</div>
+        </div>
+
+        <div class="one-third no-border">
+          <div class="stat">70 <i class="fa-regular fa-circle-up"></i></div>
+          <div class="stat-value">Adaptability</div>
+        </div>
+
+      </div>
+
     </div>
-  </div>
-</section>
+  
+  
+   <div class="benefit Nourish">
+      <div class="benefit__image benefit__image--Nourish">
+        <img src="assets/images/supportrobot.png" alt="Nourish" />
+      </div>
+      <div class="benefit__unit-name">Nourish</div>
+      <div class="benefit__unit-description">
+       Join us on this exciting journey and let's grow together by promoting Agnitus among your peers and networking with industry professionals. Be a part of the techfest that redefines innovation.
+      </div>
+
+      <div class="benefit__unit-stats benefit__unit-stats--Nourish clearfix">
+        <div class="one-third">
+          <div class="stat">80%</div>
+          <div class="stat-value">Reach</div>
+        </div>
+
+        <div class="one-third">
+          <div class="stat">70%</div>
+          <div class="stat-value">Engagement</div>
+        </div>
+
+        <div class="one-third no-border">
+          <div class="stat">65%</div>
+          <div class="stat-value">Conversion</div>
+        </div>
+
+      </div>
+
+    </div>
+  
+  
+   <div class="benefit Cherish">
+      <div class="benefit__image benefit__image--Cherish">
+        <img src="/assets/images/robot with money.png" alt="Cherish" />
+      </div>
+      <div class="benefit__unit-name">Cherish</div>
+      <div class="benefit__unit-description">
+        Cherishing your experience as an Agnitus Campus Ambassador means gaining more than just valuable knowledge, but also rewards and incentives for your efforts in promoting Agnitus to fellow peers.
+      </div>
+
+      <div class="benefit__unit-stats benefit__unit-stats--Cherish clearfix">
+        <div class="one-third">
+          <div class="stat">80%</sup></div>
+          <div class="stat-value">Certificate</div>
+        </div>
+
+        <div class="one-third">
+          <div class="stat">50%</div>
+          <div class="stat-value">Incentives</div>
+        </div>
+
+        <div class="one-third no-border">
+          <div class="stat">65%</div>
+          <div class="stat-value">Swags</div>
+        </div>
+
+      </div>
+
+    </div>
+  
+  <!-- end benefit Cherish-->
+  </div> 
 
 
 
 
+ </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-<footer id="footer">
-    <div class="logo">
-        <img src="/images/agnitus.png" alt="Agnitus logo">
+ <section id="Prize" >
+  <h1>
+   What You Get?
+  </h1>
+  <div class="wrapper1" >
+    <div class="row1" >
+    <div class="benefit Flourish">
+      <div class="benefit__image benefit__image--Flourish" style="height: 100px;">
+        <img src="assets/images/1.png" alt="Flourish"  id="one" />
+      </div>
+      <div class="benefit__unit-name" style="padding: 0px 10px;">1ST PRIZE</div>
+      <div class="benefit__unit-stats benefit__unit-stats--Nourish clearfix">
+        <div class="one-third no-border">
+          <div class="stat1" style="font-size: 46px; text-shadow: 0 0 1px #ee5487 ;">₹6000</div>
+        </div>
        
-    </div>
-            <p>"Together, let's shape the future of technology and inspire <br> the next generation of innovators."</p>
-            <button class="btn"  onclick="window.location.href='/signup/index.html';">Sign Up</button>
-        <div class="icon">
-                <div class="circle-bg">
-                    <i  onclick="window.location.href='https://www.instagram.com/agnitus_coet/';" class="fa-brands fa-instagram"></i>
-                </div>
-                <div class="circle-bg"> 
-                    <i class="fa-brands fa-firefox-browser" onclick="window.location.href='https://agnituscoet.com/';"></i> 
-                </div>
-                <div class="circle-bg"> 
-                    <i class="fa-brands fa-m" onclick="window.location.href='mailto:AGNITUSCOET@GMAIL.COM';"></i> 
-                </div>
+      </div>
+
+      </div>
+      <div class="benefit Flourish">
+        <div class="benefit__image benefit__image--Flourish" style="height: 100px;">
+          <img src="assets/images/2-removebg-preview.png" id="two" alt="Flourish"  />
+        </div>
+        <div class="benefit__unit-name" style="padding: 0px 10px;">2ND PRIZE</div>
+        <div class="benefit__unit-stats benefit__unit-stats--Nourish clearfix">
+          <div class="one-third no-border">
+            <div class="stat1" style="font-size: 46px; text-shadow: 0 0 1px #ee5487 ;">₹3000</div>
+          </div>
+         
+        </div>
+  
         </div>
 
-    <div class="phone">
-        <div class="circle-bg">
-            <i class="fa-solid fa-phone-volume" onclick="window.location.href='tel:+91 9539966671';"  id="phone"></i>
-        </div>
-        <div>
-        <p onclick="window.location.href='tel:+91 9539966671';">+91 9539966671 <br> Website Head</p>
-        <p onclick="window.location.href='tel:+91 9539966671';">+91 9539966671 <br> Ambassador Head</p>
-        </div>
-    </div>
+
+        <div class="benefit Flourish">
+          <div class="benefit__image benefit__image--Flourish" style="height: 100px;">
+            <img src="assets/images/3.png" alt="Flourish"  id="three" />
+          </div>
+          <div class="benefit__unit-name" style="padding: 0px 10px;">3RD PRIZE</div>
+          <div class="benefit__unit-stats benefit__unit-stats--Nourish clearfix">
+            <div class="one-third no-border">
+              <div class="stat1" style="font-size: 46px; text-shadow: 0 0 1px #ee5487 ;">₹1000</div>
+            </div>
+           
+          </div>
+
+      </div>
+  </div>
+
+
+      <div class="row2" >
+        <div class="more Flourish">
+          <div class="benefit__image1 benefit__image--Flourish" style="height: 100px;">
+            <img src="assets/images/extra.png" alt="Flourish"  />
+          </div>
+          <div class="benefit__unit-name1" >4TH-13TH</div>
+          <div class="benefit__unit-stats benefit__unit-stats--Nourish clearfix">
+            <div class="one-third no-border">
+              <div class="stat1"  >₹500    </div>
+            </div>
+           
+          </div>
+          </div>
     
+          
+
+          <img src="images/love.png" alt=""id="love">
+        
+        
+      
+          <div class="more Flourish" style="padding: 60px 40px;">
+            <div class="benefit__image1 benefit__image--Flourish" style="height: 100px;">
+              <img src="assets/images/extra.png" id="extras"  />
+            </div>
+            <div class="benefit__unit-name1" >EXTRAS</div>
+            <div class="benefit__unit-stats benefit__unit-stats--Nourish clearfix">
+              <div class="one-third no-border" >
+                <div class="stat1" style="font-size: 24px; text-align: center;"> CERTIFICATION <br> SWAGS <br> MORE... </div>
+              </div>
+             
+            </div>
+            </div>
+    
+
+
+         
+          
+
+</div>
+
+
+
+
+ </section>
+
+
+
+ <footer id="footer">
+  <div class="logo1">
+      <img src="assets/images/agnitus.png" alt="Agnitus logo">
+     
+  </div>
+          <p>"Together, let's shape the future of technology and inspire <br> the next generation of innovators."</p>
+          <button id="btn1"  onclick="window.location.href='/signup/index.html';">Sign Up</button>
+      <div class="icon">
+              <div class="circle-bg">
+                  <i  onclick="window.location.href='https://www.instagram.com/agnitus_coet/';" class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="circle-bg"> 
+                  <i class="fa-brands fa-firefox-browser" onclick="window.location.href='https://agnituscoet.com/';"></i> 
+              </div>
+              <div class="circle-bg"> 
+                  <i class="fa-brands fa-m" onclick="window.location.href='mailto:AGNITUSCOET@GMAIL.COM';"></i> 
+              </div>
+      </div>
+
+  <div class="phone">
+      <div class="circle-bg">
+          <i class="fa-solid fa-phone-volume" onclick="window.location.href='tel:+91 9539966671';"  id="phone"></i>
+      </div>
+      <div>
+      <p onclick="window.location.href='tel:+91 9539966671';">+91 9539966671 <br> Website Head</p>
+      <p onclick="window.location.href='tel:+91 9539966671';">+91 9539966671 <br> Ambassador Head</p>
+      </div>
+  </div>
+  
+ 
+  
+
+</footer>
+
+
+
+
+
+
+
+
+    
+
+
    
+    <script src="main.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js">
+    </script>
+  
+
+
+
+    
+ 
     
 
- </footer>
+
+
 
 </body>
-<script src="main.js"></script>
 </html>
