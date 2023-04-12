@@ -25,60 +25,71 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 		crossorigin="anonymous"></script>
 	
-<script>
-	function SubForm() {
-		// Get form data
-		var formData = $("#myForm").serializeArray();
-	
-		// Perform validation checks
-		var name = formData.find(item => item.name === 'name').value;
-		var college = formData.find(item => item.name === 'college').value;
-		var year = formData.find(item => item.name === 'year').value;
-		var mobile = formData.find(item => item.name === 'mobile').value;
-		var email = formData.find(item => item.name === 'email').value;
-		var password = formData.find(item => item.name === 'password').value;
-	
-		// Check if required fields are filled
-		if (!name || !college || !year || !mobile || !email || !password) {
-			alert("Please fill all the required fields.");
-			return;
-		}
-	
-		// Check if email is valid
-		if (!validateEmail(email)) {
-			alert("Please enter a valid email address.");
-			return;
-		}
-	
-		// Check if password has minimum length of 8 characters
-		if (password.length < 8) {
-			alert("Password must have a minimum length of 8 characters.");
-			return;
-		}
-	
-		// Make AJAX request to submit form data
-		$.ajax({
-			url: "https://api.apispreadsheets.com/data/8KnIvo7ih0AAY0YU/",
-			type: "post",
-			data: formData,
-			success: function () {
-				alert("Your SignUp is successfully completed. Click OK to proceed :)");
-				window.location.href = "success.html"; // Redirect to success.html upon successful form submission
-			},
-			error: function () {
-				alert("There was an error :(")
+		<script>
+			function SubForm() {
+				// Show loader
+				$("#loader").show();
+				
+				// Get form data
+				var formData = $("#myForm").serializeArray();
+			
+				// Perform validation checks
+				var name = formData.find(item => item.name === 'name').value;
+				var college = formData.find(item => item.name === 'college').value;
+				var year = formData.find(item => item.name === 'year').value;
+				var mobile = formData.find(item => item.name === 'mobile').value;
+				var email = formData.find(item => item.name === 'email').value;
+				var password = formData.find(item => item.name === 'password').value;
+			
+				// Check if required fields are filled
+				if (!name || !college || !year || !mobile || !email || !password) {
+					alert("Please fill all the required fields.");
+					$("#loader").hide(); // Hide loader
+					return;
+				}
+			
+				// Check if email is valid
+				if (!validateEmail(email)) {
+					alert("Please enter a valid email address.");
+					$("#loader").hide(); // Hide loader
+					return;
+				}
+			
+				// Check if password has minimum length of 8 characters
+				if (password.length < 8) {
+					alert("Password must have a minimum length of 8 characters.");
+					$("#loader").hide(); // Hide loader
+					return;
+				}
+			
+				// Make AJAX request to submit form data
+				$.ajax({
+					url: "https://api.apispreadsheets.com/data/8KnIvo7ih0AAY0YU/",
+					type: "post",
+					data: formData,
+					success: function () {
+						alert("Your SignUp is successfully completed. Click OK to proceed :)");
+						window.location.href = "success.html"; // Redirect to success.html upon successful form submission
+					},
+					error: function () {
+						alert("There was an error :(")
+					},
+					complete: function() {
+						$("#loader").hide(); // Hide loader
+					}
+				});
 			}
-		});
-	}
-	
-	function validateEmail(email) {
-		// Email validation regex pattern
-		var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return pattern.test(email);
-	}
-	
-	
-	</script>
+			
+			function validateEmail(email) {
+				// Email validation regex pattern
+				var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return pattern.test(email);
+			}
+		</script>
+		
+		<!-- Add this loader HTML element to your form -->
+		
+		
 </head>
 <body>
 	
@@ -142,7 +153,7 @@
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-calendar" aria-hidden="true"></i>
-						</span>
+						</span><span class="pass">&nbsp&nbspEnter year in number (1,2 etc)</span>
 					</div>
 				
 				
@@ -152,6 +163,8 @@
 						<button class="login100-form-btn" type="button" onclick="SubForm()">
 							SignUp
 						</button>
+						<br><br>
+						<div id="loader" style="display: none;color:red;"><br><br>Loading...</div>
 					
 				</form>
 				
