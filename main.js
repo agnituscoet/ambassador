@@ -4,9 +4,8 @@ let commet1 = document.getElementById('comet1');
 let commet = document.getElementById('comet');
 let mars = document.getElementById('mars');
 let purple = document.getElementById('purple-planet');
-let text = document.querySelectorAll('.content');
-let button = document.getElementById('button');
-let header = document.querySelector('header');
+let text = document.querySelectorAll('.heading-content');
+
 
 function parallax() {
     let value = window.scrollY;
@@ -32,12 +31,12 @@ function parallax() {
         text[i].style.marginTop = value * 1.5 + 'px';
         text[i].style.marginLeft = value * 1 + 'px';
     }
-    button.style.marginTop = value * 3 + 'px';
-    button.style.marginLeft = value * .9 + 'px';
+ 
     header.style.top = value * 0.5 + 'px';
 }
 
 window.addEventListener('scroll', parallax)
+
 
 
 hamburger = document.querySelector(".hamburger");
