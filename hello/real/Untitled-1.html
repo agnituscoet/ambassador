@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Example</title>
+    <script>
+        function searchContents() {
+            var searchInput = document.getElementById("searchInput").value; // Get the search query from the input field
+            var contents = document.getElementsByClassName("content"); // Get all content elements
+            
+            // Loop through all content elements and hide/show based on search query
+            for (var i = 0; i < contents.length; i++) {
+                var content = contents[i];
+                if (content.innerText.toLowerCase().includes(searchInput.toLowerCase())) {
+                    content.style.display = "block"; // Show content if it matches search query
+                } else {
+                    content.style.display = "none"; // Hide content if it doesn't match search query
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchContents()">Search</button>
+
+    <div class="content">
+        Content 1
+    </div>
+    <div class="content">
+        Content 2
+    </div>
+    <div class="content">
+        Content 3
+    </div>
+
+    HELLOO
+</body>
+</html>
