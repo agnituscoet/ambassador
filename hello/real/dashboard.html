@@ -230,8 +230,8 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#photos">Photos</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#text">Texts</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#phts">Photos</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#txt">Texts</a></li>
                 </ul>
               </div>
             </li>
@@ -333,81 +333,70 @@
               <div class="col-md-7 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Refferal Progress</h4>
+                    <h4 class="card-title">Refferal Points</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
                             <th> # </th>
                           
-                            <th> Date </th>
-                            <th> Progress </th>
+                            <th> Events </th>
+                            <th> Points </th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td> 1 </td>
                            
-                            <td> April 20 </td>
+                            <td> Hackatly </td>
                             <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              3500
                             </td>
                           </tr>
                           <tr>
                             <td> 2 </td>
                            
-                            <td> April 21 </td>
+                            <td> Workshops </td>
                             <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              3000
                             </td>
                           </tr>
                           <tr>
                             <td> 3 </td>
                          
-                            <td> April 22 </td>
+                            <td> Seminars </td>
                             <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                           2500
                             </td>
                           </tr>
                           <tr>
                             <td> 4 </td>
                          
-                            <td> April 23  </td>
+                            <td> Competitions (Group)  </td>
                             <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              3000
                             </td>
                           </tr>
                           <tr>
                             <td> 5 </td>
                        
-                            <td> April 24 </td>
+                            <td> Competitions (Individual) </td>
                             <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                            2500
                             </td>
                           </tr>
                           <tr>
                             <td> 5 </td>
                      
-                            <td> April 25 </td>
+                            <td> Others (Free Excluded) </td>
                             <td>
-                              <div class="progress">
-                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                            1000
                             </td>
                           </tr>
                         </tbody>
                       </table>
-                    </div>
+                      
+                    </div><br>*Those who manage to refer tickets worth more than Rs.300 will earn 250 points and additional 100 points for each Rs.100.
                   </div>
                 </div>
               </div>
@@ -476,12 +465,12 @@
 
 
                 
-                      
+                <button onclick="toggleSectionn()" class="copyButton" id="phts">Click here to see photo contents</button>
             
                       <div class="row" id="photos">
                         <div class="col-12 grid-margin stretch-card">
                           <div class="card">
-                            <div class="card-body">
+                            <div class="card-body"><section id="mySectionn">
                               <h4 class="card-title">Photos</h4>
                               <div class="d-flex">
                                 <div class="d-flex align-items-center me-4 text-muted font-weight-light">
@@ -505,7 +494,7 @@
                               </div>
                               <div class="d-flex mt-5 align-items-top">
                                 <img src="assets/images/logo-mini.svg" class="img-sm rounded-circle me-3" alt="image">
-                              
+                              <p class="mb-0 font-weight-light">  Press firmly and hold above the photos to initiate the download (use left click of mouse for laptop)</p>
                                 <div class="ms-auto">
                                   <i class="mdi mdi-heart-outline text-muted"></i>
                                 </div>
@@ -513,7 +502,7 @@
                             </div>
                           </div>
                         </div>  
-
+                      </section>
                         
 
 
@@ -525,20 +514,25 @@
 
 
        
-                  <div class="page-header">
-                    <h3 class="page-title"> Texts </h3>
+                  <div class="page-header"><button onclick="toggleSection()" class="copyButton" id="txt">Click here to see text contents</button>
+                    <h3 class="page-title" id="text"> </h3>
                     <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
+                      <ol class="breadcrumb" id="cn">
                        
-                        <li class="breadcrumb-item active" aria-current="page">Copy and share the contents</li>
+                        <li class="breadcrumb-item active" aria-current="page"></li>
+
                       </ol>
-                    </nav>
+                    </nav><br>
                   </div>
     
-    
-                  <div class="row">
+                  
+                  <section id="mySection">
+                    <!-- Content of the section -->
+              
+
+                  <div class="row" >
                     <div class="col-md-6 grid-margin stretch-card">
-                      <div class="card">
+                      <div class="card" >
                         <div class="card-body">
                           <blockquote class="blockquote" id="quoteText2">Get ready to be blown away by Agnitus, the ultimate tech fest happening at the renowned College of Engineering Thalassery! It's a platform for tech enthusiasts to showcase their skills, learn from industry experts, and connect with like-minded peers. With a wide range of workshops, competitions, Autoshow, ProShow, and more, Agnitus promises to be an electrifying event. Attend informative and interactive sessions, participate in hackathons, quizzes, debates, coding challenges, and more to test your skills and expand your knowledge. Book your tickets today at agnituscoet.com with the referral ID: [blank] and be a part of this thrilling celebration of technology and innovation.
                         </blockquote><button id="copyButton2" class="copyButton">Copy Text</button></div>
@@ -710,7 +704,23 @@
                           </div>
                         </div>
                       
-                  
+                      </section>
+                      <script>function toggleSection() {
+                        var section = document.getElementById("mySection");
+                        if (section.style.display === "none") {
+                          section.style.display = "block";
+                        } else {
+                          section.style.display = "none";
+                        }
+                      }</script>
+<script>function toggleSectionn() {
+  var section = document.getElementById("mySectionn");
+  if (section.style.display === "none") {
+    section.style.display = "block";
+  } else {
+    section.style.display = "none";
+  }
+}</script>
 
 
 
