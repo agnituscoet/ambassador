@@ -334,70 +334,82 @@
               <div class="col-md-7 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Refferal Points</h4>
+                    <h4 class="card-title">Rank board</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
                             <th> # </th>
                           
-                            <th> Events </th>
+                            <th> Name </th>
                             <th> Points </th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td> 1 </td>
-                           
-                            <td> Hackatly </td>
-                            <td>
-                              3500
+                            <td id="r1"></td>
+                            <td id="p1">
                             </td>
                           </tr>
                           <tr>
                             <td> 2 </td>
-                           
-                            <td> Workshops </td>
-                            <td>
-                              3000
+                            <td id="r2"></td>
+                            <td id="p2">
                             </td>
                           </tr>
                           <tr>
                             <td> 3 </td>
-                         
-                            <td> Seminars </td>
-                            <td>
-                           2500
+                            <td id="r3"></td>
+                            <td id="p3">
                             </td>
                           </tr>
                           <tr>
                             <td> 4 </td>
-                         
-                            <td> Competitions (Group)  </td>
-                            <td>
-                              3000
+                            <td id="r4"></td>
+                            <td id="p4">
                             </td>
                           </tr>
                           <tr>
                             <td> 5 </td>
-                       
-                            <td> Competitions (Individual) </td>
-                            <td>
-                            2500
+                            <td id="r5"></td>
+                            <td id="p5">
                             </td>
                           </tr>
                           <tr>
-                            <td> 5 </td>
-                     
-                            <td> Others (Free Excluded) </td>
-                            <td>
-                            1000
+                            <td> 6 </td>
+                            <td id="r6"></td>
+                            <td id="p6">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> 7 </td>
+                            <td id="r7"></td>
+                            <td id="p7">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> 8 </td>
+                            <td id="r8"></td>
+                            <td id="p8">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> 9 </td>
+                            <td id="r9"></td>
+                            <td id="p9">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> 10 </td>
+                            <td id="r10"></td>
+                            <td id="p10">
                             </td>
                           </tr>
                         </tbody>
                       </table>
                       
-                    </div><br>*Those who manage to refer tickets worth more than Rs.300 will earn 250 points and additional 100 points for each Rs.100.
+                    </div><br>
                   </div>
                 </div>
               </div>
@@ -1005,6 +1017,71 @@
   document.getElementById("referralPoints").innerHTML = points; // Update referral points with the value from URL
 </script>
 
+<script>
+  var xhr = new XMLHttpRequest();      
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        rank1 = data.rank1;
+        point1 = data.point1;
+        document.getElementById("r1").innerHTML = rank1;
+        document.getElementById("p1").innerHTML = point1;
+
+        rank2 = data.rank2;
+        point2 = data.point2;
+        document.getElementById("r2").innerHTML = rank2;
+        document.getElementById("p2").innerHTML = point2;
+
+        rank3 = data.rank3;
+        point3 = data.point3;
+        document.getElementById("r3").innerHTML = rank3;
+        document.getElementById("p3").innerHTML = point3;
+
+        rank4 = data.rank4;
+        point4 = data.point4;
+        document.getElementById("r4").innerHTML = rank4;
+        document.getElementById("p4").innerHTML = point4;
+
+        rank5 = data.rank5;
+        point5 = data.point5;
+        document.getElementById("r5").innerHTML = rank5;
+        document.getElementById("p5").innerHTML = point5;
+
+        rank6 = data.rank6;
+        point6 = data.point6;
+        document.getElementById("r6").innerHTML = rank6;
+        document.getElementById("p6").innerHTML = point6;
+
+        rank7 = data.rank7;
+        point7 = data.point7;
+        document.getElementById("r7").innerHTML = rank7;
+        document.getElementById("p7").innerHTML = point7;
+
+        rank8 = data.rank8;
+        point8 = data.point8;
+        document.getElementById("r8").innerHTML = rank8;
+        document.getElementById("p8").innerHTML = point8;
+
+        rank9 = data.rank9;
+        point9 = data.point9;
+        document.getElementById("r9").innerHTML = rank9;
+        document.getElementById("p9").innerHTML = point9;
+
+        rank10 = data.rank10;
+        point10 = data.point10;
+        document.getElementById("r10").innerHTML = rank10;
+        document.getElementById("p10").innerHTML = point10;
+      } 
+      else {
+        document.getElementById("result").innerHTML = "Error: " + xhr.statusText;
+      }
+    }
+  };
+  xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwObR677cdO5wybJek5lqDHuX71wixCGjZ_nS110Gkms9PTvSrNi43mrjv8-IAWmawD/exec?flag=2', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send();
+</script>
     
   </body>
 </html>
