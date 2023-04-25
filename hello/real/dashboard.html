@@ -39,6 +39,7 @@
         }
       }
     </script>
+    
   </head>
   <body>
     <div class="container-scroller">
@@ -465,7 +466,7 @@
 
 
                 
-                <button onclick="toggleSectionn()" class="copyButton" id="phts">Click here to hide/show photo contents</button>
+                <button onclick="toggleSectionn()" class="copyButton" id="phts">Click here to see photo contents</button>
             
                       <div class="row" id="photos">
                         <div class="col-12 grid-margin stretch-card">
@@ -514,7 +515,7 @@
 
 
        
-                  <div class="page-header"><button onclick="toggleSection()" class="copyButton" id="txt">Click here to hide/show text contents</button>
+                  <div class="page-header"><button onclick="toggleSection()" class="copyButton" id="txt">Click here to see text contents</button>
                     <h3 class="page-title" id="text"> </h3>
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb" id="cn">
@@ -753,8 +754,8 @@
                                   <img src="assets/images/logo-mini.svg" class="img-sm rounded-circle me-3" alt="image">
                                   <div class="mb-0 flex-grow">
                                     <h5 class="me-2 mb-2">Upload your works to earn points.</h5>
-                                    <p class="mb-0 font-weight-light">Don't forget to set the permissions of your folder to 'Restricted' so that only you and Agnitus officials can view and edit it.<br>
-                              </p></div>
+                                    <p class="mb-0 font-weight-light">Don't forget to set the permissions of your folder to 'Restricted' so that only you and Agnitus officials can view and edit it.</p>
+                                  </div>
                                   <div class="ms-auto">
                                     <i class="mdi mdi-heart-outline text-muted"></i>
                                   </div>
@@ -986,13 +987,14 @@
       });
       </script>
 <!-- Update the JavaScript code to display the result, referral points, and points -->
+
 <script>
   // Get query parameters from URL
   var params = new URLSearchParams(window.location.search);
-  var email = params.get("email");
-  var referralId = params.get("referralId");
-  var name = params.get("name");
-  var points = params.get("points"); // Get points from URL
+  var email = params.get("e");
+  var referralId = params.get("r");
+  var name = params.get("user");
+  var points = params.get("p"); // Get points from URL
 
   // Display result
   document.getElementById("name").innerHTML = name;
