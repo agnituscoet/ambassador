@@ -57,6 +57,11 @@
 						</button>
 					</div>
 
+					<div id="loading" style="display: none;">
+						<br><center><font color="red">Loading...</font></center>
+					</div>
+					
+
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Having trouble with signing in? 
@@ -99,44 +104,44 @@
 	<script>
 		// Handle form submission
 		document.querySelector('form[name="signInForm"]').addEventListener('submit', function(event) {
-      		event.preventDefault();   // prevent default form submission
-        	var form = event.target;
-        
-        	var email = document.querySelector('#email').value;
-        	var password = document.querySelector('#password').value;
-        // const loading = document.getElementById('loading');
-        // loading.style.display = 'block';
-        var xhr = new XMLHttpRequest();
-        
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                const data = JSON.parse(xhr.responseText);
-                result = data.result;
-                
-                // document.getElementById("result").innerHTML = xhr.responseText;
-                if (data.result == "success_108"){
-                    name = data.name;
-                    referral = data.referral;
-                    points = data.points;
-                	window.location.href = './real/dashboard.html?user=' + encodeURIComponent(name) + '&r=' + encodeURIComponent(referral) + '&p=' + encodeURIComponent(points) + '&e=' + encodeURIComponent(email);
-                }
-                else{
-                 alert("incorrect email or password");
-                // alert(xhr.responseText);
-                }
-            } 
-            else {
-              document.getElementById("result").innerHTML = "Error: " + xhr.statusText;
-            }
-          }
-        };
-        xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwObR677cdO5wybJek5lqDHuX71wixCGjZ_nS110Gkms9PTvSrNi43mrjv8-IAWmawD/exec?flag=1&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password), true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.send();
-        
-      });
-    </script>
+		  event.preventDefault(); // prevent default form submission
+		  var form = event.target;
+	  
+		  var email = document.querySelector('#email').value;
+		  var password = document.querySelector('#password').value;
+		  const loading = document.getElementById('loading');
+		  loading.style.display = 'block';
+		  var xhr = new XMLHttpRequest();
+	  
+		  xhr.onreadystatechange = function() {
+			if (xhr.readyState === 4) {
+			  loading.style.display = 'none';
+			  if (xhr.status === 200) {
+				const data = JSON.parse(xhr.responseText);
+				result = data.result;
+	  
+				// document.getElementById("result").innerHTML = xhr.responseText;
+				if (data.result == "success_108") {
+				  name = data.name;
+				  referral = data.referral;
+				  points = data.points;
+				  window.location.href = './real/dashboard.html?user=' + encodeURIComponent(name) + '&r=' + encodeURIComponent(referral) + '&p=' + encodeURIComponent(points) + '&e=' + encodeURIComponent(email);
+				} else {
+				  alert("incorrect email or password");
+				  // alert(xhr.responseText);
+				}
+			  } else {
+				document.getElementById("result").innerHTML = "Error: " + xhr.statusText;
+			  }
+			}
+		  };
+		  xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwObR677cdO5wybJek5lqDHuX71wixCGjZ_nS110Gkms9PTvSrNi43mrjv8-IAWmawD/exec?flag=1&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password), true);
+		  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		  xhr.send();
+	  
+		});
+	  </script>
+	  
 
 </body>
 </html>
