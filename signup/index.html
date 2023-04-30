@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<link rel="icon" type="image/png" href="favicon.ico" />
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -20,6 +20,76 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	
+		<script>
+			function SubForm() {
+				// Show loader
+				$("#loader").show();
+				
+				// Get form data
+				var formData = $("#myForm").serializeArray();
+			
+				// Perform validation checks
+				var name = formData.find(item => item.name === 'name').value;
+				var college = formData.find(item => item.name === 'college').value;
+				var year = formData.find(item => item.name === 'year').value;
+				var mobile = formData.find(item => item.name === 'mobile').value;
+				var email = formData.find(item => item.name === 'email').value;
+				var password = formData.find(item => item.name === 'password').value;
+			
+				// Check if required fields are filled
+				if (!name || !college || !year || !mobile || !email || !password) {
+					alert("Please ensure that all the required fields are completed, including the year of studying which should be entered as a numerical value (e.g., 1 for first year, 2 for second year, etc.).");
+					$("#loader").hide(); // Hide loader
+					return;
+				}
+			
+				// Check if email is valid
+				if (!validateEmail(email)) {
+					alert("Please enter a valid email address.");
+					$("#loader").hide(); // Hide loader
+					return;
+				}
+			
+				// Check if password has minimum length of 8 characters
+				if (password.length < 8) {
+					alert("Password must have a minimum length of 8 characters.");
+					$("#loader").hide(); // Hide loader
+					return;
+				}
+			
+				// Make AJAX request to submit form data
+				$.ajax({
+					url: "https://api.apispreadsheets.com/data/rljgCiC7aX63whjN/",
+					type: "post",
+					data: formData,
+					success: function () {
+						alert("Your SignUp is successfully completed. Click OK to proceed :)");
+						window.location.href = "success.html"; // Redirect to success.html upon successful form submission
+					},
+					error: function () {
+						alert("There was an error :(")
+					},
+					complete: function() {
+						$("#loader").hide(); // Hide loader
+					}
+				});
+			}
+			
+			function validateEmail(email) {
+				// Email validation regex pattern
+				var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return pattern.test(email);
+			}
+		</script>
+		
+		<!-- Add this loader HTML element to your form -->
+		
+		
 </head>
 <body>
 	
@@ -30,54 +100,92 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" id="login-form" name="signInForm">
+				<form id="myForm" class="login100-form validate-form">
 					<span class="login100-form-title">
-						AGNITUS CA
+						Agnitus Campus Ambassador Program
 					</span>
+				
+					<div class="wrap-input100 validate-input" data-validate="Name is required">
+						<input class="input100" type="text" name="name" placeholder="Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" id="email" name="email" placeholder="Email">
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" id="password" name="password"  placeholder="Password">
+					<div class="wrap-input100 validate-input" data-validate="Mobile number is required">
+						<input class="input100" type="tel" name="mobile" placeholder="Mobile Number">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					
+				
+				
+				
+					<div class="wrap-input100 validate-input" data-validate="College is required">
+						<input class="input100" type="text" name="college" placeholder="College">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-university" aria-hidden="true"></i>
+						</span>
+					</div>
+				
+					<div class="wrap-input100 validate-input" data-validate="Year is required">
+						<input class="input100" type="number" name="year" placeholder="Year of Studying">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-calendar" aria-hidden="true"></i>
+						</span>
+					</div>
+				
+				
+				
+				
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit">
-							Login
+						<button class="login100-form-btn" type="button" onclick="SubForm()">
+							SignUp
 						</button>
-					</div>
-
-					<div id="loading" style="display: none;">
-						<br><center><font color="red">Loading...</font></center>
-					</div>
+						<br><br>
+						<div id="loader" style="display: none;color:red;"><br><br>Loading...</div>
 					
-
+				</form>
+				
+				
 					<div class="text-center p-t-12">
 						<span class="txt1">
-							Having trouble with signing in? 
+							Having trouble with signing up?
 						</span>
-						<a class="txt2" href="https:/wa.me/+919539966671">
-							Contact Us
+						<a class="txt2" href="https://wa.me/+919539966671">
+							Contact us
 						</a>
-					</div>
-
-					<div class="text-center p-t-136">
-						<a class="txt2" href="https://ca.agnituscoet.com/signup/index.html">
-							Create your Account
+						<br>
+						<a class="txt2" href="signin.html">
+							Already have an account,sign in
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
+				
+					
 				</form>
+				
 			</div>
 		</div>
 	</div>
@@ -101,47 +209,6 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-	<script>
-		// Handle form submission
-		document.querySelector('form[name="signInForm"]').addEventListener('submit', function(event) {
-		  event.preventDefault(); // prevent default form submission
-		  var form = event.target;
-	  
-		  var email = document.querySelector('#email').value;
-		  var password = document.querySelector('#password').value;
-		  const loading = document.getElementById('loading');
-		  loading.style.display = 'block';
-		  var xhr = new XMLHttpRequest();
-	  
-		  xhr.onreadystatechange = function() {
-			if (xhr.readyState === 4) {
-			  loading.style.display = 'none';
-			  if (xhr.status === 200) {
-				const data = JSON.parse(xhr.responseText);
-				result = data.result;
-	  
-				// document.getElementById("result").innerHTML = xhr.responseText;
-				if (data.result == "success_108") {
-				  name = data.name;
-				  referral = data.referral;
-				  points = data.points;
-				  window.location.href = './real/dashboard.html?user=' + encodeURIComponent(name) + '&r=' + encodeURIComponent(referral) + '&p=' + encodeURIComponent(points) + '&e=' + encodeURIComponent(email);
-				} else {
-				  alert("incorrect email or password");
-				  // alert(xhr.responseText);
-				}
-			  } else {
-				document.getElementById("result").innerHTML = "Error: " + xhr.statusText;
-			  }
-			}
-		  };
-		  xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwObR677cdO5wybJek5lqDHuX71wixCGjZ_nS110Gkms9PTvSrNi43mrjv8-IAWmawD/exec?flag=1&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password), true);
-		  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		  xhr.send();
-	  
-		});
-	  </script>
-	  
 
 </body>
 </html>
